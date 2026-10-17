@@ -63,3 +63,5 @@ Maintain project-specific navigation and validated setup/check commands here as 
 - Product paths in layout are intended allocations. Do not claim source, commands, or tests exist until their implementation tasks establish them.
 
 - [TASKS](docs/dev/TASKS.md) owns the complete implementation hierarchy; [TASKS review](docs/dev/TASKS-REVIEW-REPORT.md) records conformance. All tasks remain unimplemented until a range is selected.
+
+- [Documentation package QC](docs/dev/DOCS-QC-REPORT.md) records the final preparation assessment and source identities. Confirm subsequent integration/hosted effects before implementation; documentation preapproval does not select an implementation range.

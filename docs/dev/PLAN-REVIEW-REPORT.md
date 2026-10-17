@@ -32,3 +32,12 @@ Reviewed `layout.md` SHA-256 `d06b7f918a01e70eba1f59c032af94b9180efca6d8c7f01e56
 Every significant logical component and verification area has one physical owner. Paths are labelled intended rather than existing. The small helper split within C3 separates state/validation, time/action orchestration and scoring without a generic framework. No new behavior, milestone, or product task is introduced by layout. Existing root guidance and credential exclusions are preserved.
 
 Local links, Markdown structure and diff integrity checks passed. Original strategy coverage and phase counts remain valid. No confirmed layout/conformance blocker; combined strategy and layout are Ready for TASKS. This is source allocation/QC evidence, not code, installation or browser execution evidence. The separate layout human checkpoint is satisfied by scoped preapproval under DOCS-002.
+
+## Revision 2 — Specification fixture-domain recheck
+
+- `PLAN.md`: SHA-256 `5e831497b73305b77a32629912d0661fce92c63203e19d4e2668c159546f1a73`.
+- `layout.md`: SHA-256 `d06b7f918a01e70eba1f59c032af94b9180efca6d8c7f01e565fd322a3fb83aa`.
+- `SPEC.md`: SHA-256 `305d18defc1d7b60cabd8217850a13f392c0d004f1e67c21fbf3cb6c668904e4`.
+- `SPEC-REVIEW-REPORT.md`: SHA-256 `70c4a6c46bcda721dae8b5a15bf309b1b606fd23e4623ad2a57bc597a05c667e`.
+
+Rechecked package finding DQC-001's clarified R11 fixture bounds against 1.1 validation/lock-clear, 1.3 landing/hold cases, and 1.4 error/isolation acceptance. The existing delivery routes cover the narrowed invalid-input domain; no milestone, exit or layout change is required. All four delivery milestones and the dedicated phase review remain justified; combined PLAN/layout readiness is retained. No unresolved conformance finding.

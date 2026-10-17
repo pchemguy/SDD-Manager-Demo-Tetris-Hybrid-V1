@@ -7,3 +7,5 @@ The [project brief](docs/dev/PROJECT.md) defines the accepted scope. Game code, 
 Development uses [SDD Manager](SDD-MANAGER.md). See the [AI-assisted development disclosure](AI_DISCLOSURE.md).
 
 This repository is part of the SDD Manager Demos project. The development conversation also made other plugins and skills available and contained context from earlier Tetris projects. Repository development records identify decisions and evidence for this project; availability of a tool or prior context does not establish that it was used or accepted here.
+
+The [architecture](docs/dev/ARCHITECTURE.md), [specification](docs/dev/SPEC.md), [delivery plan](docs/dev/PLAN.md), and [implementation tasks](docs/dev/TASKS.md) define the intended implementation. The selected rules include horizontal wall kicks, a 500 ms grounded lock delay, and immediate locking on hard drop. All 21 implementation tasks remain unimplemented; runtime commands and compatibility claims will be added from observed results.

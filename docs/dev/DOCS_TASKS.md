@@ -59,11 +59,12 @@ When tracking is enabled, each `DOCS-*` task maps to one issue in the `docs-main
     - Complete required task-list QC and its human acceptance checkpoint. Do not start implementation or project implementation-phase objects yet.
     - Completion: `docs/dev/TASKS.md` SHA-256 `f9269ddd7b8bc35f159b14717e49f0d4636b04088441140d0e3de52b819827ef`; Derived 21 unique unchecked tasks: 16 delivery and five explicit reviews within the PLAN parentage. Verified dependency order, 0/4/8-space hierarchy, C1–C7 paths, R01–R12/A1–A9 coverage and review/report/HANDOFF/closure exits. TASKS-REVIEW-REPORT records counts and rationale for the six-task early milestone; no unresolved blocker. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
 
-- [ ] DOCS-009 — Pass documentation package QC.
+- [x] DOCS-009 — Pass documentation package QC.
     - Require all preceding tasks complete and their issue closures verified when tracking is enabled.
     - Review the entire document set, necessary children and QC reports for consistency, traceability, delivery readiness and unresolved blockers. Check initialization, orientation, human acceptance and publication evidence.
     - Resolve blockers through their owning documents and recheck affected readiness and acceptance. Retain the package QC report with the preparation documents.
     - Refresh `docs/dev/HANDOFF.md` with the package outcome, evidence and next boundary, retaining later integration/milestone effects as requiring confirmation. Commit the handoff, passing report and this task marked complete together, push and verify; then close and verify the final QC issue.
+    - Completion: `docs/dev/DOCS-QC-REPORT.md` SHA-256 `b964f1e4d3ee3bbeb935b79783e2cb64c3570e92236b18205e042f003623ff90`; Whole-package QC resolved DQC-001 fixture-domain precision and rechecked SPEC/PLAN/TASKS currency and coverage. Verified scope, authority, first approvals/preapproval, published earlier checkpoints/issue closures, design and task boundaries, counts/dependencies, navigation and source/credential preservation. Passing report and refreshed HANDOFF accompany this checked task. Product execution remains unverified; integration and hosted closure follow. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
 
 ## Integration and final checkpoint
 

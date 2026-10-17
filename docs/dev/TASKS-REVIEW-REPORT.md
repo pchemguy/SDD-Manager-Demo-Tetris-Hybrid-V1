@@ -34,3 +34,14 @@ Inspected module breadth and failure/integration scope, not just counts. The six
 Review tasks require separate code review, tests, blocker repair, reports, TODO disposition, same-commit HANDOFF/checklist evidence, issue/milestone closure and range stops. Final phase review includes the final implementation report. Task paths conform to layout; prospective source/report paths are code literals, not false claims of existing artifacts.
 
 Findings: no confirmed unresolved conformance issue. Local links/Markdown and mechanical hierarchy/dependency/count checks passed. All implementation checks are planned; environment feasibility, native browser events/rendering and delivery remain execution obligations.
+
+## Revision 1 — Package QC fixture-domain recheck
+
+- `TASKS.md`: SHA-256 `f9269ddd7b8bc35f159b14717e49f0d4636b04088441140d0e3de52b819827ef`.
+- `PLAN.md`: SHA-256 `5e831497b73305b77a32629912d0661fce92c63203e19d4e2668c159546f1a73`.
+- `layout.md`: SHA-256 `d06b7f918a01e70eba1f59c032af94b9180efca6d8c7f01e565fd322a3fb83aa`.
+- `SPEC.md`: SHA-256 `305d18defc1d7b60cabd8217850a13f392c0d004f1e67c21fbf3cb6c668904e4`.
+- `SPEC-REVIEW-REPORT.md`: SHA-256 `70c4a6c46bcda721dae8b5a15bf309b1b606fd23e4623ad2a57bc597a05c667e`.
+- `PLAN-REVIEW-REPORT.md`: SHA-256 `99174878ded43a643d934af0cc9d099eff637c2c6bdbe4aee171ec953762023a`.
+
+Rechecked DQC-001 against T-004 state/fixture rejection, T-005 1–4-row lock/clear integration, T-018 cross-feature errors/isolation and T-021 complete coverage. These existing scopes cover the explicit R11 bounds and queue ownership; no task scope, ID, dependency or count change is required. Revalidated 21 unique unchecked tasks, 16 delivery tasks, five reviews and PLAN parentage. TASKS remains Ready subject to preparation integration, authorized range and phase activation. No unresolved finding or product test result is inferred.
