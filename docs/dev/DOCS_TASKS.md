@@ -12,11 +12,16 @@ When tracking is enabled, each `DOCS-*` task maps to one issue in the `docs-main
 
 ## Preparation
 
-- [ ] DOCS-001 — Initialize the repository for SDD Manager.
+- [x] DOCS-001 — Initialize the repository for SDD Manager.
     - Inspect root `AI_DISCLOSURE.md`, `SDD-MANAGER.md`, `AGENTS.md` and `SKILL_DISCOVERY_PROTOCOL.md` before copying. Preserve existing files and copy only missing files from the bundled templates.
     - Record which root files existed and which were copied; verify copied bytes and preserved content.
     - Establish/reconcile `docs/dev/HANDOFF.md` as generated checkpoint metadata, outside the four-file presence/copy test. Include it with this task's completion and initialization result, push and verify; then close and verify its issue when tracking is enabled.
     - Report initialization. If some but not all of the four root files existed initially, warn with the retained/copied filenames and end the turn before document work, unless the user explicitly preapproved continuation through this checkpoint. If none or all existed, continue without an additional approval pause.
+    - Initialization result: all four root files existed initially: `AI_DISCLOSURE.md`, `SDD-MANAGER.md`, `AGENTS.md`, and `SKILL_DISCOVERY_PROTOCOL.md`. All were preserved byte for byte against the branch-off commit; none were copied. No mixed-presence continuation pause applies.
+    - Verified `docs-main` milestone 1 and DOCS-001–009 issues #1–#9, with exact task markers and milestone associations, before repository modifications. Tracking is selected by root AGENTS policy.
+    - Established `HANDOFF.md` and credential exclusion/protection. This checked task and initialization result are submitted together; confirm publication and issue closure from actual Git/GitHub evidence.
+    - Authority: on 2026-10-17 the user explicitly authorized required repository branches, commits, pushes, merges, and GitHub milestone/issue tracking within the agreed scope. Human document checkpoints remain in effect; no future checkpoints were preapproved.
+
 - [ ] DOCS-002 — Prepare and accept PROJECT.
     - Establish the project brief: purpose, users, outcomes, scope, non-goals and consequential constraints; identify material assumptions and unresolved decisions.
     - Review the proposal with the human and complete its acceptance checkpoint.
