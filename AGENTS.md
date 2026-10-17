@@ -50,7 +50,7 @@ If a required tracking prerequisite cannot be satisfied, report the blocker and 
 
 Maintain project-specific navigation and validated setup/check commands here as they become established. Do not invent commands, paths, requirements or completion claims.
 
-- Project brief: [docs/dev/PROJECT.md](docs/dev/PROJECT.md), currently proposed for human acceptance.
+- Project brief: [docs/dev/PROJECT.md](docs/dev/PROJECT.md), accepted on 2026-10-17; subsequent documentation checkpoints through integration are preapproved as recorded in DOCS_TASKS.
 - Preparation progress and decision evidence: [docs/dev/DOCS_TASKS.md](docs/dev/DOCS_TASKS.md).
 - Workflow checkpoint: [docs/dev/HANDOFF.md](docs/dev/HANDOFF.md); recover later progress from the preparation list and Git.
 - Game code and validated product setup/check commands are not present yet.

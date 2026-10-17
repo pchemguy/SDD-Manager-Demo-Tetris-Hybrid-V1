@@ -22,12 +22,13 @@ When tracking is enabled, each `DOCS-*` task maps to one issue in the `docs-main
     - Established `HANDOFF.md` and credential exclusion/protection. This checked task and initialization result are submitted together; confirm publication and issue closure from actual Git/GitHub evidence.
     - Authority: on 2026-10-17 the user explicitly authorized required repository branches, commits, pushes, merges, and GitHub milestone/issue tracking within the agreed scope. Human document checkpoints remain in effect; no future checkpoints were preapproved.
 
-- [ ] DOCS-002 — Prepare and accept PROJECT.
+- [x] DOCS-002 — Prepare and accept PROJECT.
     - Establish the project brief: purpose, users, outcomes, scope, non-goals and consequential constraints; identify material assumptions and unresolved decisions.
     - Review the proposal with the human and complete its acceptance checkpoint.
     - Proposal: `PROJECT.md` covers the user-confirmed classic baseline and hold, ghost, 7-bag, wall kicks, and hard drop in the first completed version. The user confirmed TypeScript, keyboard controls, and automated gameplay tests in the conversation.
-    - Proposed product boundaries: desktop keyboard play, client-side application, and no accounts/backend/multiplayer/touch/audio/settings/saved games in the initial scope. These await acceptance with PROJECT.
-    - Review evidence: confirmed-capability coverage, separation of proposals from established decisions, local link checks, Markdown spacing, and diff integrity checked. Exact gameplay rules remain for design/SPEC. PROJECT acceptance is pending; do not start ARCHITECTURE.
+    - Proposed product boundaries: desktop keyboard play, client-side application, and no accounts/backend/multiplayer/touch/audio/settings/saved games in the initial scope. These boundaries were accepted with PROJECT on 2026-10-17.
+    - Review evidence: confirmed-capability coverage, separation of proposals from established decisions, local link checks, Markdown spacing, and diff integrity checked. Exact gameplay rules remain for design/SPEC. PROJECT was approved on 2026-10-17 at the exact presented state in commit `8754e93c9f182017655741ac77fdd7ca86765143`; its brief blob is retained unchanged in this acceptance commit.
+    - Future-checkpoint grant: the user wrote “Approved. Also pre-approved are checkpoints through the ned of the docs phase, including the merge” on 2026-10-17. This covers remaining documentation proposals, required QC, package completion, documentation integration and milestone closure. It does not select or authorize an implementation task range. Continue without further documentation acceptance pauses; technical blockers and publication/tracking gates remain in force.
 - [ ] DOCS-003 — Prepare and accept ARCHITECTURE.
     - Define major system blocks, relationships, dependency direction and consequential structural decisions from the accepted brief.
     - Review the proposal with the human and complete its acceptance checkpoint.
