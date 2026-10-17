@@ -54,3 +54,10 @@ Maintain project-specific navigation and validated setup/check commands here as 
 - Preparation progress and decision evidence: [docs/dev/DOCS_TASKS.md](docs/dev/DOCS_TASKS.md).
 - Workflow checkpoint: [docs/dev/HANDOFF.md](docs/dev/HANDOFF.md); recover later progress from the preparation list and Git.
 - Game code and validated product setup/check commands are not present yet.
+
+## Governing document navigation
+
+- [ARCHITECTURE](docs/dev/ARCHITECTURE.md) and [DECOMPOSITION](docs/dev/DECOMPOSITION.md) own structural decisions and component responsibilities.
+- [SPEC](docs/dev/SPEC.md) owns exact behavior; [SPEC review](docs/dev/SPEC-REVIEW-REPORT.md) records conformance.
+- [PLAN](docs/dev/PLAN.md) and [layout](docs/dev/layout.md) own delivery and physical allocation; [PLAN review](docs/dev/PLAN-REVIEW-REPORT.md) records combined readiness.
+- Product paths in layout are intended allocations. Do not claim source, commands, or tests exist until their implementation tasks establish them.

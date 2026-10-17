@@ -2,7 +2,7 @@
 
 ## Current gate
 
-State: Ready for delivery strategy only. TASKS readiness is Blocked pending physical layout and combined review. Reviewed on 2026-10-17 under scoped preapproval. No confirmed strategy defect remains; pending layout is an expected separate preparation stage, not an accepted omission.
+State: Ready for TASKS after combined PLAN/layout review in Revision 1. Initial strategy-only readiness and its held layout coverage are retained below. Reviewed on 2026-10-17 under scoped preapproval. No confirmed strategy defect remains; pending layout is an expected separate preparation stage, not an accepted omission.
 
 ## Initial reviewed identities
 
@@ -24,3 +24,11 @@ Mapped R01–R12 and A1–A9 to the explicit delivery-route table. Reviewed prer
 The environment prerequisite is retained because installs alone cannot establish browser/session/Canvas capability; its exit must be bounded before the earliest usable slice. No user-facing requirement is invented to pad a milestone. Delivery-task counts are assessed after TASKS derivation, not guessed from this strategic plan.
 
 Findings: no confirmed unresolved strategy issue. Physical allocation and component-to-path ownership have not yet been reviewed; TASKS generation remains held until the layout checkpoint and combined review. All product execution evidence is planned; no packages, browser probes, gameplay tests or build have run during preparation.
+
+## Revision 1 — Physical allocation and combined readiness
+
+Reviewed `layout.md` SHA-256 `d06b7f918a01e70eba1f59c032af94b9180efca6d8c7f01e565fd322a3fb83aa` against the unchanged PLAN and governing design/SPEC identities recorded above. Checked C1–C7 source ownership, pure-engine dependency direction, shared types, fixtures versus production imports, early native browser integration, strict checks/tooling homes, source documentation, static assets/harness exclusion, CI without deployment, and all milestone/phase/final report locations.
+
+Every significant logical component and verification area has one physical owner. Paths are labelled intended rather than existing. The small helper split within C3 separates state/validation, time/action orchestration and scoring without a generic framework. No new behavior, milestone, or product task is introduced by layout. Existing root guidance and credential exclusions are preserved.
+
+Local links, Markdown structure and diff integrity checks passed. Original strategy coverage and phase counts remain valid. No confirmed layout/conformance blocker; combined strategy and layout are Ready for TASKS. This is source allocation/QC evidence, not code, installation or browser execution evidence. The separate layout human checkpoint is satisfied by scoped preapproval under DOCS-002.

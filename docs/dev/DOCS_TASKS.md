@@ -49,9 +49,11 @@ When tracking is enabled, each `DOCS-*` task maps to one issue in the `docs-main
     - Complete PLAN QC, then present PLAN for human approval.
     - Completion: `docs/dev/PLAN.md` SHA-256 `5e831497b73305b77a32629912d0661fce92c63203e19d4e2668c159546f1a73`; Reviewed all R01–R12/A1–A9 delivery routes, earliest meaningful playable slice, dependencies and honest deferrals. One phase has four delivery milestones and a dedicated phase review milestone. PLAN-REVIEW-REPORT is Ready for strategy; TASKS remains held for layout and combined QC. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
 
-- [ ] DOCS-007 — Prepare and accept layout.
+- [x] DOCS-007 — Prepare and accept layout.
     - Allocate source, tests, documentation and artifacts to physical paths consistently with the accepted design and PLAN.
     - Review layout against the design and PLAN, update the PLAN review report, then present layout for human approval.
+    - Completion: `docs/dev/layout.md` SHA-256 `d06b7f918a01e70eba1f59c032af94b9180efca6d8c7f01e565fd322a3fb83aa`; Mapped C1–C7, checks, fixture isolation, tooling, generated outputs, user/agent guidance and report homes. Appended PLAN review Revision 1 with exact layout identity and combined Ready for TASKS, preserving initial strategy review. No physical ownership blocker. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
+
 - [ ] DOCS-008 — Prepare and accept TASKS.
     - Derive executable tasks, dependencies and required milestone/phase review units from accepted SPEC, PLAN and layout.
     - Complete required task-list QC and its human acceptance checkpoint. Do not start implementation or project implementation-phase objects yet.
