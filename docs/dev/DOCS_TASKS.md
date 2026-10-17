@@ -39,9 +39,11 @@ When tracking is enabled, each `DOCS-*` task maps to one issue in the `docs-main
     - Review the proposal with the human and complete its acceptance checkpoint.
     - Completion: `docs/dev/DECOMPOSITION.md` SHA-256 `78ca4d9451410ed40dbb335f4a875ea9b134598827ef089dbae8e7c118ea2edf`; Reviewed C1–C7 responsibility, dependency direction, engine/snapshot/fixture ownership, timer/input collaboration, errors, disposal, and verification seams against accepted ARCHITECTURE. No ownership cycles or unresolved structural blocker. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
 
-- [ ] DOCS-005 — Prepare and accept SPEC.
+- [x] DOCS-005 — Prepare and accept SPEC.
     - Specify observable behavior, interfaces, error contracts, required qualities and acceptance conditions from the accepted design.
     - Complete required SPEC QC and its human acceptance checkpoint.
+    - Completion: `docs/dev/SPEC.md` SHA-256 `f7737e7d2e927bc5f332b0a3883f8a8c07b751ed832b623c297e36af1bc9bfc6`; Completed R01–R12 and A1–A9 with explicit geometry, horizontal kicks, 500 ms grounded lock, immediate hard drop, bag/hold/ghost, scoring, input/lifecycle, errors and browser/build contracts. SPEC-REVIEW-REPORT records exact source identities, grouped C1–C7 conformance and Ready with no unresolved blocker. Product checks are planned, not performed. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
+
 - [ ] DOCS-006 — Prepare and accept PLAN.
     - Define delivery phases, milestones, dependencies and exit conditions against SPEC.
     - Complete PLAN QC, then present PLAN for human approval.
