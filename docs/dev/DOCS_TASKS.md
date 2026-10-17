@@ -29,9 +29,11 @@ When tracking is enabled, each `DOCS-*` task maps to one issue in the `docs-main
     - Proposed product boundaries: desktop keyboard play, client-side application, and no accounts/backend/multiplayer/touch/audio/settings/saved games in the initial scope. These boundaries were accepted with PROJECT on 2026-10-17.
     - Review evidence: confirmed-capability coverage, separation of proposals from established decisions, local link checks, Markdown spacing, and diff integrity checked. Exact gameplay rules remain for design/SPEC. PROJECT was approved on 2026-10-17 at the exact presented state in commit `8754e93c9f182017655741ac77fdd7ca86765143`; its brief blob is retained unchanged in this acceptance commit.
     - Future-checkpoint grant: the user wrote “Approved. Also pre-approved are checkpoints through the ned of the docs phase, including the merge” on 2026-10-17. This covers remaining documentation proposals, required QC, package completion, documentation integration and milestone closure. It does not select or authorize an implementation task range. Continue without further documentation acceptance pauses; technical blockers and publication/tracking gates remain in force.
-- [ ] DOCS-003 — Prepare and accept ARCHITECTURE.
+- [x] DOCS-003 — Prepare and accept ARCHITECTURE.
     - Define major system blocks, relationships, dependency direction and consequential structural decisions from the accepted brief.
     - Review the proposal with the human and complete its acceptance checkpoint.
+    - Completion: `docs/dev/ARCHITECTURE.md` SHA-256 `cef3e1597075374857ed2328a78830e76b6fcb775f9cde9ee564b09e6a590da4`; Reviewed block ownership, directed dependencies, explicit time/randomness, browser-resource lifecycle, alternatives, and verification seams against accepted PROJECT. No unresolved architectural blocker. PROJECT/README status was aligned with its recorded acceptance without changing scope. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
+
 - [ ] DOCS-004 — Prepare and accept DECOMPOSITION.
     - Define component responsibilities, collaboration, ownership and design-level interface boundaries consistently with ARCHITECTURE.
     - Review the proposal with the human and complete its acceptance checkpoint.

@@ -1,8 +1,8 @@
 # Tetris
 
-A TypeScript browser-based Tetris game under development. The proposed first version includes a 10×20 board, seven tetrominoes, keyboard controls, scoring and levels, next-piece preview, pause/restart, hold, ghost projection, 7-bag randomization, wall kicks, and hard drop.
+A TypeScript browser-based Tetris game under development. The first version includes a 10×20 board, seven tetrominoes, keyboard controls, scoring and levels, next-piece preview, pause/restart, hold, ghost projection, 7-bag randomization, wall kicks, and hard drop.
 
-The [project brief](docs/dev/PROJECT.md) is proposed for review. Game code, setup commands, and gameplay verification are not available yet.
+The [project brief](docs/dev/PROJECT.md) defines the accepted scope. Game code, setup commands, and gameplay verification are not available yet.
 
 Development uses [SDD Manager](SDD-MANAGER.md). See the [AI-assisted development disclosure](AI_DISCLOSURE.md).
 

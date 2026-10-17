@@ -1,7 +1,5 @@
 # Tetris project brief
 
-Status: proposed for human review; DOCS-002 remains incomplete until first approval.
-
 ## Purpose and intended users
 
 Build a single-player, browser-based Tetris game for people who want familiar falling-block gameplay with keyboard controls. The project also serves as a practical demonstration of specification-driven development using SDD Manager, with reviewable requirements, incremental delivery, automated tests, and GitHub tracking.
@@ -24,17 +22,17 @@ The user selected TypeScript and confirmed that the first completed version incl
 - A maintainable TypeScript implementation with reproducible setup and checks documented from verified commands.
 - Development records that distinguish proposed requirements, accepted decisions, implemented behavior, and actual verification.
 
-## Proposed boundaries
+## Product boundaries
 
-The initial product targets desktop browsers with a physical keyboard. It runs as a client-side application without accounts, a server, or network access during play. Multiplayer, online leaderboards, touch controls, sound, configurable rules, and saved-game persistence are outside the proposed initial scope.
+The initial product targets desktop browsers with a physical keyboard. It runs as a client-side application without accounts, a server, or network access during play. Multiplayer, online leaderboards, touch controls, sound, configurable rules, and saved-game persistence are outside the initial scope.
 
-These boundaries are proposals for acceptance with this brief, not requirements supplied by the user. Development and dependency installation may require network access.
+Development and dependency installation may require network access.
 
 ## Constraints and decisions to develop
 
 TypeScript, browser delivery, and the confirmed capability set are established constraints. Repository guidance requires SDD Manager document checkpoints, per-commit publication, and GitHub documentation and implementation tracking; repository operations were explicitly authorized in the conversation.
 
-ARCHITECTURE will propose the rendering approach, application structure, and development/test tooling. SPEC will propose exact scoring and progression, gravity and lock timing, rotation and wall-kick behavior, hold limits, spawn/top-out behavior, keyboard mapping and repeat, pause/focus handling, and supported browser checks. The brief does not claim conformance to an official Tetris ruleset.
+ARCHITECTURE defines the rendering approach, application structure, and development/test tooling. SPEC defines exact scoring and progression, gravity and lock timing, rotation and wall-kick behavior, hold limits, spawn/top-out behavior, keyboard mapping and repeat, pause/focus handling, and supported browser checks. The brief does not claim conformance to an official Tetris ruleset.
 
 No special locking policy or control mapping from another Tetris project is adopted without an explicit decision for this repository. No implementation is complete at this checkpoint.
 
