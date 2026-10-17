@@ -25,6 +25,9 @@ When tracking is enabled, each `DOCS-*` task maps to one issue in the `docs-main
 - [ ] DOCS-002 — Prepare and accept PROJECT.
     - Establish the project brief: purpose, users, outcomes, scope, non-goals and consequential constraints; identify material assumptions and unresolved decisions.
     - Review the proposal with the human and complete its acceptance checkpoint.
+    - Proposal: `PROJECT.md` covers the user-confirmed classic baseline and hold, ghost, 7-bag, wall kicks, and hard drop in the first completed version. The user confirmed TypeScript, keyboard controls, and automated gameplay tests in the conversation.
+    - Proposed product boundaries: desktop keyboard play, client-side application, and no accounts/backend/multiplayer/touch/audio/settings/saved games in the initial scope. These await acceptance with PROJECT.
+    - Review evidence: confirmed-capability coverage, separation of proposals from established decisions, local link checks, Markdown spacing, and diff integrity checked. Exact gameplay rules remain for design/SPEC. PROJECT acceptance is pending; do not start ARCHITECTURE.
 - [ ] DOCS-003 — Prepare and accept ARCHITECTURE.
     - Define major system blocks, relationships, dependency direction and consequential structural decisions from the accepted brief.
     - Review the proposal with the human and complete its acceptance checkpoint.
