@@ -44,9 +44,11 @@ When tracking is enabled, each `DOCS-*` task maps to one issue in the `docs-main
     - Complete required SPEC QC and its human acceptance checkpoint.
     - Completion: `docs/dev/SPEC.md` SHA-256 `f7737e7d2e927bc5f332b0a3883f8a8c07b751ed832b623c297e36af1bc9bfc6`; Completed R01–R12 and A1–A9 with explicit geometry, horizontal kicks, 500 ms grounded lock, immediate hard drop, bag/hold/ghost, scoring, input/lifecycle, errors and browser/build contracts. SPEC-REVIEW-REPORT records exact source identities, grouped C1–C7 conformance and Ready with no unresolved blocker. Product checks are planned, not performed. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
 
-- [ ] DOCS-006 — Prepare and accept PLAN.
+- [x] DOCS-006 — Prepare and accept PLAN.
     - Define delivery phases, milestones, dependencies and exit conditions against SPEC.
     - Complete PLAN QC, then present PLAN for human approval.
+    - Completion: `docs/dev/PLAN.md` SHA-256 `5e831497b73305b77a32629912d0661fce92c63203e19d4e2668c159546f1a73`; Reviewed all R01–R12/A1–A9 delivery routes, earliest meaningful playable slice, dependencies and honest deferrals. One phase has four delivery milestones and a dedicated phase review milestone. PLAN-REVIEW-REPORT is Ready for strategy; TASKS remains held for layout and combined QC. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
+
 - [ ] DOCS-007 — Prepare and accept layout.
     - Allocate source, tests, documentation and artifacts to physical paths consistently with the accepted design and PLAN.
     - Review layout against the design and PLAN, update the PLAN review report, then present layout for human approval.
