@@ -34,9 +34,11 @@ When tracking is enabled, each `DOCS-*` task maps to one issue in the `docs-main
     - Review the proposal with the human and complete its acceptance checkpoint.
     - Completion: `docs/dev/ARCHITECTURE.md` SHA-256 `cef3e1597075374857ed2328a78830e76b6fcb775f9cde9ee564b09e6a590da4`; Reviewed block ownership, directed dependencies, explicit time/randomness, browser-resource lifecycle, alternatives, and verification seams against accepted PROJECT. No unresolved architectural blocker. PROJECT/README status was aligned with its recorded acceptance without changing scope. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
 
-- [ ] DOCS-004 — Prepare and accept DECOMPOSITION.
+- [x] DOCS-004 — Prepare and accept DECOMPOSITION.
     - Define component responsibilities, collaboration, ownership and design-level interface boundaries consistently with ARCHITECTURE.
     - Review the proposal with the human and complete its acceptance checkpoint.
+    - Completion: `docs/dev/DECOMPOSITION.md` SHA-256 `78ca4d9451410ed40dbb335f4a875ea9b134598827ef089dbae8e7c118ea2edf`; Reviewed C1–C7 responsibility, dependency direction, engine/snapshot/fixture ownership, timer/input collaboration, errors, disposal, and verification seams against accepted ARCHITECTURE. No ownership cycles or unresolved structural blocker. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
+
 - [ ] DOCS-005 — Prepare and accept SPEC.
     - Specify observable behavior, interfaces, error contracts, required qualities and acceptance conditions from the accepted design.
     - Complete required SPEC QC and its human acceptance checkpoint.
