@@ -61,3 +61,5 @@ Maintain project-specific navigation and validated setup/check commands here as 
 - [SPEC](docs/dev/SPEC.md) owns exact behavior; [SPEC review](docs/dev/SPEC-REVIEW-REPORT.md) records conformance.
 - [PLAN](docs/dev/PLAN.md) and [layout](docs/dev/layout.md) own delivery and physical allocation; [PLAN review](docs/dev/PLAN-REVIEW-REPORT.md) records combined readiness.
 - Product paths in layout are intended allocations. Do not claim source, commands, or tests exist until their implementation tasks establish them.
+
+- [TASKS](docs/dev/TASKS.md) owns the complete implementation hierarchy; [TASKS review](docs/dev/TASKS-REVIEW-REPORT.md) records conformance. All tasks remain unimplemented until a range is selected.

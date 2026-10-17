@@ -54,9 +54,11 @@ When tracking is enabled, each `DOCS-*` task maps to one issue in the `docs-main
     - Review layout against the design and PLAN, update the PLAN review report, then present layout for human approval.
     - Completion: `docs/dev/layout.md` SHA-256 `d06b7f918a01e70eba1f59c032af94b9180efca6d8c7f01e565fd322a3fb83aa`; Mapped C1–C7, checks, fixture isolation, tooling, generated outputs, user/agent guidance and report homes. Appended PLAN review Revision 1 with exact layout identity and combined Ready for TASKS, preserving initial strategy review. No physical ownership blocker. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
 
-- [ ] DOCS-008 — Prepare and accept TASKS.
+- [x] DOCS-008 — Prepare and accept TASKS.
     - Derive executable tasks, dependencies and required milestone/phase review units from accepted SPEC, PLAN and layout.
     - Complete required task-list QC and its human acceptance checkpoint. Do not start implementation or project implementation-phase objects yet.
+    - Completion: `docs/dev/TASKS.md` SHA-256 `f9269ddd7b8bc35f159b14717e49f0d4636b04088441140d0e3de52b819827ef`; Derived 21 unique unchecked tasks: 16 delivery and five explicit reviews within the PLAN parentage. Verified dependency order, 0/4/8-space hierarchy, C1–C7 paths, R01–R12/A1–A9 coverage and review/report/HANDOFF/closure exits. TASKS-REVIEW-REPORT records counts and rationale for the six-task early milestone; no unresolved blocker. Acceptance basis: scoped documentation-checkpoint preapproval recorded under DOCS-002. Publication/readback and issue closure follow this commit and must be reconciled from Git/GitHub.
+
 - [ ] DOCS-009 — Pass documentation package QC.
     - Require all preceding tasks complete and their issue closures verified when tracking is enabled.
     - Review the entire document set, necessary children and QC reports for consistency, traceability, delivery readiness and unresolved blockers. Check initialization, orientation, human acceptance and publication evidence.
