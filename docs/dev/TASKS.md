@@ -20,10 +20,11 @@ Require current upstream QC, published preparation integration, authorized range
             Scope: C1 types, pieces and board modules plus focused unit fixtures.
             Acceptance/evidence: R01/R07 and A1: all seven spawn shapes, rotation transforms, placement/bounds/overlap, ordered horizontal kick candidates, landing geometry and pure simultaneous row-removal helpers. Test boundaries and rejected candidates; no DOM dependency.
             Verified: Observed behavioral RED then GREEN in `tests/unit/pieces.test.ts` (6 passed) and `tests/unit/board.test.ts` (6 passed); `npm run typecheck` and `npm run test:unit` (14 passed total) verified all 7 spawn geometries, CW/CCW rotation transforms, 4-turn restoration, O-piece no-op rotation, horizontal kick candidate priority `(0,0), (-1,0), (+1,0), (-2,0), (+2,0)`, floor/wall/overlap rejection, non-penetrating landing projection (`R07`), immutable locking, and simultaneous row removal preserving relative order (`R05`) with zero DOM dependency. Issue: `pchemguy/SDD-Manager-Demo-Tetris-Hybrid-V1#11`.
-        - [ ] T-003 — Implement deterministic seven-bag draws and preview
+        - [x] T-003 — Implement deterministic seven-bag draws and preview
             Depends on: T-002.
             Scope: C2 bag module, injected sample boundary and focused unit tests.
             Acceptance/evidence: R03/A2/A9: exact deterministic shuffle, permutation/refill boundaries, draw order/preview correspondence and invalid samples without partial bag mutation. Document randomness ownership.
+            Verified: Observed behavioral RED then GREEN in `tests/unit/bag.test.ts` (3 passed); `npm run typecheck` and `npm run test:unit` (17 passed total) verified descending Fisher–Yates shuffle of `['I','O','T','J','L','S','Z']`, multi-bag permutation and refill boundary correspondence between `peekNext()` and `drawNext()`, and `RangeError` rejection of out-of-range/non-finite samples without partial bag mutation. Issue: `pchemguy/SDD-Manager-Demo-Tetris-Hybrid-V1#12`.
         - [ ] T-004 — Implement engine session state movement and elapsed-time handling
             Depends on: T-003.
             Scope: C3 state/engine modules and isolated unit fixtures.
