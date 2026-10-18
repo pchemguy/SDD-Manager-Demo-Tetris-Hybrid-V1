@@ -30,10 +30,11 @@ Require current upstream QC, published preparation integration, authorized range
             Scope: C3 state/engine modules and isolated unit fixtures.
             Acceptance/evidence: R02/R04/R11 with A3/A9: fresh/start/restart state, fixture/snapshot isolation and rejection, horizontal/soft movement, explicit gravity accumulation and contact/airborne timing. This is an intermediate engine slice; full lock/clear/spawn integration completes in T-005.
             Verified: Observed behavioral RED then GREEN in `tests/unit/state.test.ts` (4 passed) and `tests/unit/engine-movement-time.test.ts` (6 passed); `npm run typecheck` and `npm run test:unit` (27 passed total) verified `ready`/`start`/`restart` session state, `R11` fixture validation (`RangeError`) and action validation (`TypeError`) before mutation, snapshot/fixture deep-copy isolation, horizontal/soft-drop movement, gravity interval `max(80, floor(1000 * 0.85^(level - 1)))`, and grounded contact vs lift-off timer behavior. Issue: `pchemguy/SDD-Manager-Demo-Tetris-Hybrid-V1#13`.
-        - [ ] T-005 — Integrate lock clear spawn and game-over transitions
+        - [x] T-005 — Integrate lock clear spawn and game-over transitions
             Depends on: T-004.
             Scope: C3 transition orchestration using C1 row/placement helpers; engine unit/integration tests.
             Acceptance/evidence: R02/R04/R05 and A3/A4: exact 499/500 ms contact, ordered lock/clear/spawn/top-out, simultaneous 1–4 row removal, retained row order, multiple-event advancement and no double locking. Score/level progression remains scoped to T-009.
+            Verified: Observed behavioral RED then GREEN in `tests/unit/engine-lock-clear.test.ts` (5 passed); `npm run typecheck` and `npm run test:unit` (32 passed total) verified exact 499 ms active vs 500 ms grounded lock boundary, lock expiry priority over coinciding gravity tick, chronological multi-event advancement across gravity/contact/lock/spawn/descent, simultaneous 1–4 row clearing preserving retained row order, hold-eligibility reset, and colliding post-lock spawn `game-over` transition. Issue: `pchemguy/SDD-Manager-Demo-Tetris-Hybrid-V1#14`.
         - [ ] T-006 — Integrate the playable browser core
             Depends on: T-005.
             Scope: C5/C6/C7 application, Canvas/HTML shell, native basic input, loop and start/restart bindings; deterministic browser harness and core scenarios.

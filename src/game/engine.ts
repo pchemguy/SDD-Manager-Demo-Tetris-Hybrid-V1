@@ -1,11 +1,14 @@
 import { createSevenBagQueue, type SevenBagQueue } from './bag.ts';
 import {
+  clearFullRows,
+  cloneBoard,
   createEmptyBoard,
   isPieceGrounded,
   isValidPlacement,
+  lockPieceOnBoard,
   tryTranslatePiece,
 } from './board.ts';
-import { createSpawnPiece } from './pieces.ts';
+import { cloneActivePiece, createSpawnPiece } from './pieces.ts';
 import {
   computeGravityIntervalMs,
   createReadySessionState,
@@ -23,9 +26,11 @@ import {
 } from './types.ts';
 
 /**
- * C3 Game engine (T-004 slice: session state, horizontal/soft movement,
- * gravity accumulation, and grounded/airborne contact timing).
- * Full lock/clear/spawn/top-out transition orchestration completes in T-005.
+ * C3 Game engine (T-004 / T-005).
+ * Owns session state, horizontal/soft movement, chronological gravity and
+ * 500 ms grounded contact locking, simultaneous 1-4 row clearing, next-piece
+ * spawning, and colliding-spawn game-over transitions (R02, R04, R05, R11).
+ * Score/level progression on clears and drops is scoped to T-009.
  */
 
 export interface EngineOptions {
@@ -40,19 +45,60 @@ export interface GameEngine {
   getSnapshot(): GameSnapshot;
 }
 
+function cloneInternalState(state: InternalSessionState): InternalSessionState {
+  return {
+    lifecycle: state.lifecycle,
+    board: cloneBoard(state.board),
+    activePiece: state.activePiece ? cloneActivePiece(state.activePiece) : null,
+    heldPiece: state.heldPiece,
+    holdUsed: state.holdUsed,
+    score: state.score,
+    lines: state.lines,
+    level: state.level,
+    gravityElapsedMs: state.gravityElapsedMs,
+    groundedElapsedMs: state.groundedElapsedMs,
+  };
+}
+
 export function createGameEngine(options: EngineOptions = {}): GameEngine {
   let randomSource: RandomSource = options.random ?? Math.random;
-  // Validate fixture before creating session or consuming random source if provided
   let state: InternalSessionState = options.fixture
     ? validateAndCloneFixture(options.fixture)
     : createReadySessionState();
   let queue: SevenBagQueue = createSevenBagQueue(randomSource);
 
-  function spawnFromQueue(): void {
+  function spawnNextFromQueue(): void {
+    // Draw from queue before mutating state so a RangeError during bag refill
+    // never leaves partial engine-state mutations (R03 / R11).
     const nextId = queue.drawNext();
     const spawned = createSpawnPiece(nextId);
     state.gravityElapsedMs = 0;
     state.groundedElapsedMs = 0;
+    if (!isValidPlacement(state.board, spawned.cells)) {
+      state.activePiece = null;
+      state.lifecycle = 'game-over';
+      return;
+    }
+    state.activePiece = spawned;
+    state.lifecycle = 'running';
+  }
+
+  function lockActivePiece(): void {
+    if (!state.activePiece) {
+      return;
+    }
+    const lockedBoard = lockPieceOnBoard(state.board, state.activePiece);
+    const { board: clearedBoard, clearedLines } = clearFullRows(lockedBoard);
+    // Draw next piece before mutating state so refill failure is atomic
+    const nextId = queue.drawNext();
+
+    state.board = clearedBoard;
+    state.lines += clearedLines;
+    state.holdUsed = false;
+    state.gravityElapsedMs = 0;
+    state.groundedElapsedMs = 0;
+
+    const spawned = createSpawnPiece(nextId);
     if (!isValidPlacement(state.board, spawned.cells)) {
       state.activePiece = null;
       state.lifecycle = 'game-over';
@@ -81,7 +127,6 @@ export function createGameEngine(options: EngineOptions = {}): GameEngine {
       // Grounded timer starts at zero immediately on first contact (R04)
       state.groundedElapsedMs = 0;
     }
-    // If wasGrounded && nowGrounded, groundedElapsedMs is preserved (R04)
   }
 
   function applySoftDrop(): void {
@@ -105,7 +150,7 @@ export function createGameEngine(options: EngineOptions = {}): GameEngine {
 
       if (action === 'start') {
         if (state.lifecycle === 'ready') {
-          spawnFromQueue();
+          spawnNextFromQueue();
         }
         return createSnapshot(state, queue.peekNext());
       }
@@ -125,7 +170,7 @@ export function createGameEngine(options: EngineOptions = {}): GameEngine {
           applySoftDrop();
           break;
         default:
-          // Rotation, pause, hold, and hard-drop are integrated in subsequent tasks
+          // Rotation, pause, hold, and hard-drop are integrated in Milestones 1.2-1.3
           break;
       }
 
@@ -134,49 +179,60 @@ export function createGameEngine(options: EngineOptions = {}): GameEngine {
 
     advanceTime(elapsedMs: number): GameSnapshot {
       if (typeof elapsedMs !== 'number' || !Number.isFinite(elapsedMs) || elapsedMs < 0) {
-        throw new RangeError(`Elapsed time must be a finite nonnegative number; received ${String(elapsedMs)}.`);
+        throw new RangeError(
+          `Elapsed time must be a finite nonnegative number; received ${String(elapsedMs)}.`,
+        );
       }
       if (elapsedMs === 0 || state.lifecycle !== 'running' || !state.activePiece) {
         return createSnapshot(state, queue.peekNext());
       }
 
-      let remainingMs = elapsedMs;
-      while (remainingMs > 0 && state.lifecycle === 'running' && state.activePiece) {
-        const gravityIntervalMs = computeGravityIntervalMs(state.level);
-        const timeToGravity = gravityIntervalMs - state.gravityElapsedMs;
-        const grounded = isPieceGrounded(state.board, state.activePiece);
-        const timeToLock = grounded ? LOCK_DELAY_MS - state.groundedElapsedMs : Number.POSITIVE_INFINITY;
-        const nextEventMs = Math.min(remainingMs, timeToGravity, timeToLock);
+      const backupState = cloneInternalState(state);
+      try {
+        let remainingMs = elapsedMs;
+        while (remainingMs > 0 && state.lifecycle === 'running' && state.activePiece) {
+          const gravityIntervalMs = computeGravityIntervalMs(state.level);
+          const timeToGravity = gravityIntervalMs - state.gravityElapsedMs;
+          const grounded = isPieceGrounded(state.board, state.activePiece);
+          const timeToLock = grounded
+            ? LOCK_DELAY_MS - state.groundedElapsedMs
+            : Number.POSITIVE_INFINITY;
+          const nextEventMs = Math.min(remainingMs, timeToGravity, timeToLock);
 
-        state.gravityElapsedMs += nextEventMs;
-        if (grounded) {
-          state.groundedElapsedMs += nextEventMs;
-        }
-        remainingMs -= nextEventMs;
+          state.gravityElapsedMs += nextEventMs;
+          if (grounded) {
+            state.groundedElapsedMs += nextEventMs;
+          }
+          remainingMs -= nextEventMs;
 
-        if (grounded && state.groundedElapsedMs >= LOCK_DELAY_MS) {
-          // Full lock/clear/spawn orchestration is integrated in T-005
-          break;
-        }
+          // At equal event times, lock expiry has priority over a gravity attempt (R04).
+          if (grounded && state.groundedElapsedMs >= LOCK_DELAY_MS) {
+            lockActivePiece();
+            continue;
+          }
 
-        if (state.gravityElapsedMs >= gravityIntervalMs) {
-          state.gravityElapsedMs = 0;
-          const stepped = tryTranslatePiece(state.board, state.activePiece, 0, 1);
-          if (stepped) {
-            state.activePiece = stepped;
-            state.groundedElapsedMs = 0;
+          if (state.gravityElapsedMs >= gravityIntervalMs) {
+            state.gravityElapsedMs = 0;
+            const stepped = tryTranslatePiece(state.board, state.activePiece, 0, 1);
+            if (stepped) {
+              state.activePiece = stepped;
+              state.groundedElapsedMs = 0;
+            }
           }
         }
+      } catch (err) {
+        state = backupState;
+        throw err;
       }
 
       return createSnapshot(state, queue.peekNext());
     },
 
     restart(newRandom?: RandomSource): GameSnapshot {
-      if (newRandom !== undefined) {
-        randomSource = newRandom;
-      }
-      const nextQueue = createSevenBagQueue(randomSource);
+      const candidateRandom = newRandom ?? randomSource;
+      // Create and validate the fresh queue before mutating session state
+      const nextQueue = createSevenBagQueue(candidateRandom);
+      randomSource = candidateRandom;
       queue = nextQueue;
       state = {
         lifecycle: 'running',
@@ -190,7 +246,7 @@ export function createGameEngine(options: EngineOptions = {}): GameEngine {
         gravityElapsedMs: 0,
         groundedElapsedMs: 0,
       };
-      spawnFromQueue();
+      spawnNextFromQueue();
       return createSnapshot(state, queue.peekNext());
     },
 
