@@ -9,7 +9,7 @@ Require current upstream QC, published preparation integration, authorized range
 ## Phase 1 — Complete browser Tetris
 
 - [ ] Phase 1 — Complete browser Tetris
-    - [ ] Milestone 1.1 — Playable falling-block core
+    - [x] Milestone 1.1 — Playable falling-block core
         - [x] T-001 — Establish compatible tooling and browser capabilities
             Depends on: None; require accepted preparation integration, authorized range, and verified eligible-phase tracking before execution.
             Scope: Package/lockfile, strict TypeScript and Vite/Vitest/Playwright configuration, production skeleton, generated-output exclusions and setup guidance. Choose exact mutually compatible versions; keep npm scripts CMD-compatible.
@@ -40,10 +40,11 @@ Require current upstream QC, published preparation integration, authorized range
             Scope: C5/C6/C7 application, Canvas/HTML shell, native basic input, loop and start/restart bindings; deterministic browser harness and core scenarios.
             Acceptance/evidence: R02/R09/R10/R12 with A7/A8: start, move, soft descend, timed lock, clear, next spawn, top-out and restart through the actual app in all three engines, including observed rendered board/status. Keep harness excluded from production. Document the working subset and explicit milestone deferrals.
             Verified: Observed behavioral RED then GREEN in `tests/unit/keyboard.test.ts` (3 passed); `npm run typecheck`, `npm run test:unit` (35 passed across 8 files), `npm run test:browser` (15 passed across Chromium, Firefox, and WebKit in `startup.spec.ts` and `gameplay.spec.ts` verifying native start/move/soft-drop/timed-lock/line-clear/next-spawn/top-out/restart and Canvas 2D pixel output), and `npm run build` (`dist/` contains only `index.html` and `assets/` with zero test harness files). Documented Milestone 1.1 working subset and explicit deferrals in `README.md`. Issue: `pchemguy/SDD-Manager-Demo-Tetris-Hybrid-V1#15`.
-        - [ ] T-007 — Review test and report milestone 1.1
+        - [x] T-007 — Review test and report milestone 1.1
             Depends on: T-001, T-002, T-003, T-004, T-005, T-006; all constituent task issue closures verified.
             Scope/evidence: separate code review of milestone capability and dependencies, required tests/regressions and PLAN exits, blocker repairs, truthful usability/function demonstration and findings/TODO disposition. Report: `docs/dev/reports/phases/1/1.1.md`. Refresh HANDOFF in the same checked-review-task commit; publish, close/read back review issue, then milestone.
             SPEC trace: the milestone delivery contracts above and [PLAN](PLAN.md) exits.
+            Verified: Performed separate read-only implementation code review across `C1`–`C7` (`src/game/*`, `src/browser/*`, `src/app.ts`, `src/main.ts`, `tests/*`, configs) against ARCHITECTURE, DECOMPOSITION, SPEC (`R01`–`R05`, `R07`, `R09`–`R12`), PLAN, and layout at `cf1bf598406341c780a74ffce821c1dc34f5b3ed` (`0` blockers, `TODO: None`). Executed `npm run typecheck` (PASS), `npm run test:unit` (35 passed across 8 test files), `npm run test:browser` (15 passed across Chromium, Firefox, WebKit), and `npm run build` (`dist/` verified free of test harness files). Authored [docs/dev/reports/phases/1/1.1.md](reports/phases/1/1.1.md) and refreshed [docs/dev/HANDOFF.md](HANDOFF.md). Issue: `pchemguy/SDD-Manager-Demo-Tetris-Hybrid-V1#16`.
     - [ ] Milestone 1.2 — Rotation, progression, and lifecycle
         - [ ] T-008 — Integrate clockwise counterclockwise rotation and wall kicks
             Depends on: T-007; milestone 1.1 complete and closed.
