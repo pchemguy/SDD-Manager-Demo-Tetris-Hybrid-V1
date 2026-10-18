@@ -52,8 +52,15 @@ Maintain project-specific navigation and validated setup/check commands here as 
 
 - Project brief: [docs/dev/PROJECT.md](docs/dev/PROJECT.md), accepted on 2026-10-17; subsequent documentation checkpoints through integration are preapproved as recorded in DOCS_TASKS.
 - Preparation progress and decision evidence: [docs/dev/DOCS_TASKS.md](docs/dev/DOCS_TASKS.md).
-- Workflow checkpoint: [docs/dev/HANDOFF.md](docs/dev/HANDOFF.md); recover later progress from the preparation list and Git.
-- Game code and validated product setup/check commands are not present yet.
+- Workflow checkpoint: [docs/dev/HANDOFF.md](docs/dev/HANDOFF.md); recover later progress from the preparation list, [docs/dev/TASKS.md](docs/dev/TASKS.md), and Git.
+- Active implementation branch: `phase/1-complete-browser-tetris` (selected range: Milestone `1.1 — Playable falling-block core`, `T-001`–`T-007`).
+- Validated CMD-compatible setup and check commands (`T-001`, Node `v26.3.0`, npm `11.16.0`, `typescript@5.8.3`, `vite@8.3.4`, `vitest@5.0.5`, `@playwright/test@1.64.1`):
+    - Clean install: `npm ci`
+    - Browser provisioning: `npx playwright install chromium firefox webkit`
+    - Static typecheck: `npm run typecheck`
+    - Unit suite: `npm run test:unit`
+    - Browser suite (Chromium, Firefox, WebKit): `npm run test:browser`
+    - Production build: `npm run build`
 
 ## Governing document navigation
 
@@ -62,6 +69,6 @@ Maintain project-specific navigation and validated setup/check commands here as 
 - [PLAN](docs/dev/PLAN.md) and [layout](docs/dev/layout.md) own delivery and physical allocation; [PLAN review](docs/dev/PLAN-REVIEW-REPORT.md) records combined readiness.
 - Product paths in layout are intended allocations. Do not claim source, commands, or tests exist until their implementation tasks establish them.
 
-- [TASKS](docs/dev/TASKS.md) owns the complete implementation hierarchy; [TASKS review](docs/dev/TASKS-REVIEW-REPORT.md) records conformance. All tasks remain unimplemented until a range is selected.
+- [TASKS](docs/dev/TASKS.md) owns the complete implementation hierarchy; [TASKS review](docs/dev/TASKS-REVIEW-REPORT.md) records conformance.
 
 - [Documentation package QC](docs/dev/DOCS-QC-REPORT.md) records the final preparation assessment and source identities. Confirm subsequent integration/hosted effects before implementation; documentation preapproval does not select an implementation range.

@@ -10,10 +10,11 @@ Require current upstream QC, published preparation integration, authorized range
 
 - [ ] Phase 1 — Complete browser Tetris
     - [ ] Milestone 1.1 — Playable falling-block core
-        - [ ] T-001 — Establish compatible tooling and browser capabilities
+        - [x] T-001 — Establish compatible tooling and browser capabilities
             Depends on: None; require accepted preparation integration, authorized range, and verified eligible-phase tracking before execution.
             Scope: Package/lockfile, strict TypeScript and Vite/Vitest/Playwright configuration, production skeleton, generated-output exclusions and setup guidance. Choose exact mutually compatible versions; keep npm scripts CMD-compatible.
             Acceptance/evidence: R12/A8. Demonstrate clean installation, declared runner/typecheck/build commands, all three browser binary launches, repeated session lifecycle and actual Canvas rendering using bounded setup probes. Record Node/package/browser versions and limits; do not claim probes establish game acceptance.
+            Verified: Node `v26.3.0`, npm `11.16.0`; pinned `typescript@5.8.3`, `vite@8.3.4`, `vitest@5.0.5`, `@playwright/test@1.64.1`, `@types/node@26.6.5`; Playwright Chromium `156.0.8078.4` (`v1248`), Firefox `157.0` (`v1555`), WebKit `27.2` (`v2370`). Observed behavioral RED then GREEN in `tests/unit/setup.test.ts` (2 passed); `npm ci` (0 vulnerabilities), `npm run typecheck`, `npm run build` (`dist/` relative assets), and `npm run test:browser` (`tests/browser/startup.spec.ts`: 6 passed across Chromium, Firefox, WebKit verifying Canvas 2D pixel rasterization and repeated context/page sessions). Probes verify tooling/browser capabilities only, not gameplay acceptance. Issue: `pchemguy/SDD-Manager-Demo-Tetris-Hybrid-V1#10`.
         - [ ] T-002 — Implement piece and board geometry
             Depends on: T-001.
             Scope: C1 types, pieces and board modules plus focused unit fixtures.
