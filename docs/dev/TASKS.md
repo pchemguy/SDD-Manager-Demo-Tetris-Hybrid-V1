@@ -25,10 +25,11 @@ Require current upstream QC, published preparation integration, authorized range
             Scope: C2 bag module, injected sample boundary and focused unit tests.
             Acceptance/evidence: R03/A2/A9: exact deterministic shuffle, permutation/refill boundaries, draw order/preview correspondence and invalid samples without partial bag mutation. Document randomness ownership.
             Verified: Observed behavioral RED then GREEN in `tests/unit/bag.test.ts` (3 passed); `npm run typecheck` and `npm run test:unit` (17 passed total) verified descending Fisher–Yates shuffle of `['I','O','T','J','L','S','Z']`, multi-bag permutation and refill boundary correspondence between `peekNext()` and `drawNext()`, and `RangeError` rejection of out-of-range/non-finite samples without partial bag mutation. Issue: `pchemguy/SDD-Manager-Demo-Tetris-Hybrid-V1#12`.
-        - [ ] T-004 — Implement engine session state movement and elapsed-time handling
+        - [x] T-004 — Implement engine session state movement and elapsed-time handling
             Depends on: T-003.
             Scope: C3 state/engine modules and isolated unit fixtures.
             Acceptance/evidence: R02/R04/R11 with A3/A9: fresh/start/restart state, fixture/snapshot isolation and rejection, horizontal/soft movement, explicit gravity accumulation and contact/airborne timing. This is an intermediate engine slice; full lock/clear/spawn integration completes in T-005.
+            Verified: Observed behavioral RED then GREEN in `tests/unit/state.test.ts` (4 passed) and `tests/unit/engine-movement-time.test.ts` (6 passed); `npm run typecheck` and `npm run test:unit` (27 passed total) verified `ready`/`start`/`restart` session state, `R11` fixture validation (`RangeError`) and action validation (`TypeError`) before mutation, snapshot/fixture deep-copy isolation, horizontal/soft-drop movement, gravity interval `max(80, floor(1000 * 0.85^(level - 1)))`, and grounded contact vs lift-off timer behavior. Issue: `pchemguy/SDD-Manager-Demo-Tetris-Hybrid-V1#13`.
         - [ ] T-005 — Integrate lock clear spawn and game-over transitions
             Depends on: T-004.
             Scope: C3 transition orchestration using C1 row/placement helpers; engine unit/integration tests.
