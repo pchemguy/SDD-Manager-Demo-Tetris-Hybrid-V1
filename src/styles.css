@@ -29,21 +29,139 @@ body {
   gap: 24px;
   align-items: flex-start;
   justify-content: center;
+  outline: none;
 }
 
-.board-Canvas-frame {
-  border: 2px solid #38bdf8;
+.board-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board-canvas-frame {
+  position: relative;
   background-color: #0f172a;
   display: inline-block;
   line-height: 0;
 }
 
+.lifecycle-overlay {
+  position: absolute;
+  inset: 12px;
+  background-color: rgba(15, 23, 42, 0.84);
+  border: 1px solid #38bdf8;
+  border-radius: 8px;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
 .status-panel {
-  min-width: 220px;
+  min-width: 240px;
+  max-width: 320px;
   background-color: #1e293b;
   border: 1px solid #334155;
   border-radius: 8px;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.game-title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #38bdf8;
+}
+
+.status-row {
+  font-size: 1rem;
+}
+
+.metrics-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0;
+}
+
+.metric-item {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+}
+
+.metric-item dt {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.metric-item dd {
+  margin: 4px 0 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.preview-box {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls-group {
+  display: flex;
+  gap: 8px;
+}
+
+.control-button {
+  flex: 1;
+  background-color: #0284c7;
+  color: #f8fafc;
+  border: 1px solid #38bdf8;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.control-button:hover:not(:disabled) {
+  background-color: #0369a1;
+}
+
+.control-button:focus-visible {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+}
+
+.control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.help-box {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  border-top: 1px solid #334155;
+  padding-top: 10px;
+}
+
+.help-box ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
 }
 
 .init-error {
